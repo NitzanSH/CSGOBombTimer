@@ -27,7 +27,10 @@ namespace CSGO_BombTimer
 
         private void numericTextBox1_TextChanged(object sender, EventArgs e)
         {
-            form1.BOMB_SECS = Int32.Parse(numericTextBox1.Text);
+            if (numericTextBox1.Text != "")
+            {
+                form1.BOMB_SECS = Int32.Parse(numericTextBox1.Text);
+            }
         }
     }
 
