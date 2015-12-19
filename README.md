@@ -6,7 +6,7 @@ Instructions:
     2.Run the CSGO_BombTimer.exe as administrator.
     3.Run CS GO in Fullscreen Windowed/Windowed and plant the bomb :)
 
-![enter image description here](http://puu.sh/m17kw/f6163c0ee5.png)
+![photo](http://puu.sh/m17kw/f6163c0ee5.png)
 
 Credits:
 
