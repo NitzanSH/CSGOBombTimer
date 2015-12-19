@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSGO_IntegrationGUI
+namespace CSGO_BombTimer
 {
     static class Program
     {

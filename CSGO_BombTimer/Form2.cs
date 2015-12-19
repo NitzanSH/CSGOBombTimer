@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSGO_IntegrationGUI
+namespace CSGO_BombTimer
 {
     public partial class Form2 : Form
     {
@@ -17,6 +17,9 @@ namespace CSGO_IntegrationGUI
             InitializeComponent();
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

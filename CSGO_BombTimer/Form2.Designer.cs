@@ -1,4 +1,4 @@
-﻿namespace CSGO_IntegrationGUI
+﻿namespace CSGO_BombTimer
 {
     partial class Form2
     {
@@ -73,6 +73,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "BombTimer By Crapy";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

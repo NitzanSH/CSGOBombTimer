@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 
-namespace CSGO_IntegrationGUI
+namespace CSGO_BombTimer
 {
     
     public partial class Form1 : Form
@@ -20,15 +20,10 @@ namespace CSGO_IntegrationGUI
 
         {
 
-            DateTime dt = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Local);
+            TimeSpan cac = DateTime.UtcNow - new DateTime(1970, 1, 1);
+            int secondsSinceEpoch = (int)cac.TotalSeconds;
 
-            DateTime dtNow = DateTime.Now;
-
-            TimeSpan result = dtNow.Subtract(dt);
-
-            int seconds = Convert.ToInt32(result.TotalSeconds);
-
-            return seconds;
+            return secondsSinceEpoch;
 
         }
 
@@ -106,7 +101,7 @@ namespace CSGO_IntegrationGUI
 
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            bombTimer = ((timestamp + BOMB_SECS) - calculateSeconds()) + 7200;
+            bombTimer = ((timestamp + BOMB_SECS) - calculateSeconds()) - 1;
             if (bombTimer >= 0) {
             
               label1.Invoke((MethodInvoker)(() => label1.Text = bombTimer.ToString()));

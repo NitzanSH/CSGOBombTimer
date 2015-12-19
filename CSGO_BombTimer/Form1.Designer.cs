@@ -1,4 +1,4 @@
-﻿namespace CSGO_IntegrationGUI
+﻿namespace CSGO_BombTimer
 {
     partial class Form1
     {
