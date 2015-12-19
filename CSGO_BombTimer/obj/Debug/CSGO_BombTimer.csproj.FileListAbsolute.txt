@@ -1,0 +1,6 @@
+C:\Users\Dor\Desktop\CSGO_BombTimer\CSGO_BombTimer\bin\Debug\CSGO_BombTimer.exe.config
+C:\Users\Dor\Desktop\CSGO_BombTimer\CSGO_BombTimer\obj\Debug\CSGO_BombTimer.exe
+C:\Users\Dor\Desktop\CSGO_BombTimer\CSGO_BombTimer\obj\Debug\CSGO_BombTimer.pdb
+C:\Users\Dor\Desktop\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\bin\Debug\CSGO_BombTimer.exe.config
+C:\Users\Dor\Desktop\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\obj\Debug\CSGO_BombTimer.exe
+C:\Users\Dor\Desktop\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\obj\Debug\CSGO_BombTimer.pdb
