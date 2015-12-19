@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numericTextBox1 = new CSGO_BombTimer.NumericTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -62,11 +64,34 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Remember that CS GO needs to be Windowed or Fullscreen Windowed.";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(303, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Timer";
+            // 
+            // numericTextBox1
+            // 
+            this.numericTextBox1.AllowSpace = false;
+            this.numericTextBox1.Location = new System.Drawing.Point(342, 106);
+            this.numericTextBox1.MaxLength = 2;
+            this.numericTextBox1.Name = "numericTextBox1";
+            this.numericTextBox1.Size = new System.Drawing.Size(18, 20);
+            this.numericTextBox1.TabIndex = 3;
+            this.numericTextBox1.Text = "40";
+            this.numericTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericTextBox1.TextChanged += new System.EventHandler(this.numericTextBox1_TextChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(378, 136);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.numericTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -84,5 +109,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private NumericTextBox numericTextBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

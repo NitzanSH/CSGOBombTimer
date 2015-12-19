@@ -36,7 +36,7 @@ namespace CSGO_BombTimer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Form2 frm = new Form2();
+            Form2 frm = new Form2(this);
             frm.FormClosed += new FormClosedEventHandler(Form2_FormClosed);
             frm.Show();
             this.Opacity = 0;
