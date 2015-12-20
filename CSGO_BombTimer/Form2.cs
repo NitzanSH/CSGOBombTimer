@@ -55,11 +55,7 @@ namespace CSGO_BombTimer
             {
                 // Digits are OK
             }
-            else if (keyInput.Equals(decimalSeparator) || keyInput.Equals(groupSeparator) ||
-             keyInput.Equals(negativeSign))
-            {
-                // Decimal separator is OK
-            }
+
             else if (e.KeyChar == '\b')
             {
                 // Backspace key is OK

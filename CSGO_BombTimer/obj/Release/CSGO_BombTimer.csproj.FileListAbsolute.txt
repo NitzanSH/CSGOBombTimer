@@ -6,7 +6,6 @@ C:\Users\Dor\Desktop\כל מיני\Projects\CSGOBombTimer\CSGOBombTimer\CSGO_Bom
 C:\Users\Dor\Desktop\כל מיני\Projects\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\bin\Release\CSGO_BombTimer.exe.config
 C:\Users\Dor\Desktop\כל מיני\Projects\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\bin\Release\CSGO_BombTimer.exe
 C:\Users\Dor\Desktop\כל מיני\Projects\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\bin\Release\CSGO_BombTimer.pdb
-C:\Users\Dor\Desktop\כל מיני\Projects\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\bin\Release\CSGSI.dll
 C:\Users\Dor\Desktop\כל מיני\Projects\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\bin\Release\Newtonsoft.Json.dll
 C:\Users\Dor\Desktop\כל מיני\Projects\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\bin\Release\Newtonsoft.Json.xml
 C:\Users\Dor\Desktop\כל מיני\Projects\CSGOBombTimer\CSGOBombTimer\CSGO_BombTimer\obj\Release\CSGO_BombTimer.exe
