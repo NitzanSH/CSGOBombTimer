@@ -2,7 +2,7 @@ This is my first ever something made in C#. A simple Bomb Timer to be presented 
 
 EXE Download: http://www.mediafire.com/download/93s1i9t72asue0c/CSGO_BombTimer.rar
 
-CFG Download: http://www.mediafire.com/download/0m7xfmcgna0m6ma/gamestate_integration_bomb_timer.cfg
+CFG Download: http://www.mediafire.com/download/8bhgiq042xbh61f/gamestate_integration_bomb_timer.cfg
 
 Instructions:
 
