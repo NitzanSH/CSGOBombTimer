@@ -2,6 +2,7 @@
 using System.Timers;
 using System.Windows.Forms;
 using CSGSI;
+using CSGSI.Nodes;
 using Timer = System.Timers.Timer;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -40,13 +41,12 @@ namespace CSGO_BombTimer
             frm.FormClosed += new FormClosedEventHandler(Form2_FormClosed);
             frm.Show();
             this.Opacity = 0;
-            //this.SetDesktopLocation(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Right - this.Width, 100);
 
-            //subscribe to the NewGameState event
-            GSIListener.NewGameState += new EventHandler(OnNewGameState);
+            GameStateListener gsl = new GameStateListener(3000);
+            gsl.NewGameState += new NewGameStateHandler(OnNewGameState);
 
             //start listening on http://127.0.0.1:3000/
-            if (GSIListener.Start(3000))
+            if (gsl.Start())
             {
                 label1.Text = "Listening..";
             }
@@ -56,33 +56,31 @@ namespace CSGO_BombTimer
                 label1.Text = "Error";
             }
         }
-
-        private void OnNewGameState(object sender, EventArgs e)
+        static bool IsPlanted = false;
+        private void OnNewGameState(GameState gs)
         {
-            //the newest GameState object is provided as the sender
-            GameState gs = (GameState)sender;
-
-            GameStateNode gsRound = gs.Round;
-            GameStateNode gsProvider = gs.Provider;
-            if (gsRound.GetValue("bomb") == "planted")
+            if (!IsPlanted &&
+               gs.Round.Phase == RoundPhase.Live &&
+               gs.Round.Bomb == BombState.Planted &&
+               gs.Previously.Round.Bomb == BombState.Undefined)
             {
-                if (bombTimer <= 1) { 
-                    timestamp = Int32.Parse(gsProvider.GetValue("timestamp"));
-                    t.Enabled = true;
-                }
+                timestamp = Int32.Parse(gs.Provider.TimeStamp);
+                t.Enabled = true;
+                IsPlanted = true;
             }
-            else
+            else if(IsPlanted && (gs.Round.Phase == RoundPhase.Over || gs.Round.Phase == RoundPhase.FreezeTime))
             {
                 bombTimer = 0;
                 t.Enabled = false;
                 this.Invoke((MethodInvoker)(() => this.Opacity = 0));
+                IsPlanted = false;
             }
 
         }
 
         void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Environment.Exit(1);
+            Environment.Exit(1);
         }
 
         [DllImport("user32.dll")]
