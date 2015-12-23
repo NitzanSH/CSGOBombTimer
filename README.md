@@ -7,8 +7,7 @@ CFG Download: http://www.mediafire.com/download/8bhgiq042xbh61f/gamestate_integr
 Instructions:
 
     1.Place the gamestate_integration_bomb_timer.cfg in your csgo/cfg folder.
-    2.Run the CSGO_BombTimer.exe as administrator.
-    3.Run CS GO in Fullscreen Windowed/Windowed and plant the bomb :)
+    2.Run CS GO in Fullscreen Windowed/Windowed and plant the bomb :)
 
 ![photo](http://puu.sh/m17kw/f6163c0ee5.png)
 
