@@ -69,5 +69,15 @@ namespace CSGO_BombTimer.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon C4_ico {
+            get {
+                object obj = ResourceManager.GetObject("C4_ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

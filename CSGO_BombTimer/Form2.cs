@@ -8,21 +8,56 @@ using System.Text;
 using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace CSGO_BombTimer
 {
     public partial class Form2 : Form
     {
         private Form1 form1;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ContextMenu contextMenu1;
+        private System.Windows.Forms.MenuItem menuItem1;
+
         public Form2(Form1 otherForm)
         {
             form1 = otherForm;
+
+            this.components = new Container();
+            this.contextMenu1 = new ContextMenu();
+            this.menuItem1 = new MenuItem();
+            this.notifyIcon = new NotifyIcon(this.components);
+
+  
+            this.contextMenu1.MenuItems.AddRange(
+                        new MenuItem[] { this.menuItem1 });
+
+            this.menuItem1.Index = 0;
+            this.menuItem1.Text = "E&xit";
+            menuItem1.Click += new EventHandler(menuItem1_Click);
+
+            this.notifyIcon = new NotifyIcon(this.components);
+
+
+            notifyIcon.Icon = Properties.Resources.C4_ico;
+
+            notifyIcon.ContextMenu = this.contextMenu1;
+
+            notifyIcon.Text = "Bomb Timer By Crapy";
+
+            notifyIcon.Click += new EventHandler(notifyIcon_Click);
             InitializeComponent();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-         
+            this.SizeChanged += new EventHandler(Form2_Resize);
+
+        }
+        
+        private void menuItem1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
         }
 
         private void numericTextBox1_TextChanged(object sender, EventArgs e)
@@ -32,7 +67,33 @@ namespace CSGO_BombTimer
                 form1.BOMB_SECS = Int32.Parse(numericTextBox1.Text);
             }
         }
+
+
+        private void notifyIcon_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.Activate();
+
+        }
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            notifyIcon.BalloonTipTitle = "Bomb Timer";
+            notifyIcon.BalloonTipText = "Minimized to tray";
+
+            if (FormWindowState.Minimized == this.WindowState)
+            {
+                notifyIcon.Visible = true;
+                notifyIcon.ShowBalloonTip(500);
+                this.Hide();
+            }
+            else if (FormWindowState.Normal == this.WindowState)
+            {
+                notifyIcon.Visible = false;
+            }
+        }
     }
+    
 
     public class NumericTextBox : TextBox
     {

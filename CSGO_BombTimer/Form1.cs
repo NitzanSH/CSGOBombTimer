@@ -6,7 +6,8 @@ using CSGSI.Nodes;
 using Timer = System.Timers.Timer;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
+using System.Drawing.Text;
+using System.Drawing;
 
 namespace CSGO_BombTimer
 {
@@ -32,8 +33,10 @@ namespace CSGO_BombTimer
         {
             t.Elapsed += OnTimedEvent;
             t.AutoReset = true;
+            
             InitializeComponent();
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -45,16 +48,17 @@ namespace CSGO_BombTimer
             GameStateListener gsl = new GameStateListener(3000);
             gsl.NewGameState += new NewGameStateHandler(OnNewGameState);
 
-            //start listening on http://127.0.0.1:3000/
+            //start listening on http://localhost:3000/
             if (gsl.Start())
             {
-                label1.Text = "Listening..";
+                timerlabel.Text = "Listening..";
             }
             else
             {
                 //Console.WriteLine("Error starting GSIListener.");
-                label1.Text = "Error";
+                timerlabel.Text = "Error";
             }
+            
         }
         static bool IsPlanted = false;
         private void OnNewGameState(GameState gs)
@@ -100,19 +104,18 @@ namespace CSGO_BombTimer
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
             bombTimer = (timestamp + BOMB_SECS) - calculateSeconds();
-            if (bombTimer >= 0) {
-            
-              label1.Invoke((MethodInvoker)(() => label1.Text = bombTimer.ToString()));
+            if (bombTimer >= 0) { 
+                timerlabel.Invoke((MethodInvoker)(() => timerlabel.Text = bombTimer.ToString()));
             }
             if(GetActiveWindowTitle() == "Counter-Strike: Global Offensive")
             {
-                this.Invoke((MethodInvoker)(() => this.Opacity = 50));
+                this.Invoke((MethodInvoker)(() => this.Opacity = 0.7));
                 const int nChars = 256;
                 StringBuilder Buff = new StringBuilder(nChars);
                 IntPtr handle = GetForegroundWindow();
                 Rect CSGORect = new Rect();
                 GetWindowRect(handle, ref CSGORect);
-                this.Invoke((MethodInvoker)(() => this.SetDesktopLocation(CSGORect.Right - this.Width, CSGORect.Top + 100 + this.Height)));
+                this.Invoke((MethodInvoker)(() => this.SetDesktopLocation(CSGORect.Right - (this.Width + 50), CSGORect.Top + 150 + this.Height)));
             }
             else
             {
@@ -136,6 +139,43 @@ namespace CSGO_BombTimer
             return null;
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                // Turn on WS_EX_TOOLWINDOW style bit
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x80;
+                return cp;
+            }
+        }
+
+        private Bitmap getPictureBoxImage()
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.DrawImage(pictureBox1.Image,
+                    new Rectangle(0, 0, bmp.Width, bmp.Height));
+            }
+            return bmp;
+        }
+    }
+
+    public partial class CustomLabel : Label
+    {
         
+        private TextRenderingHint _hint = TextRenderingHint.SystemDefault;
+        public TextRenderingHint TextRenderingHint
+        {
+            get { return this._hint; }
+            set { this._hint = value; }
+        }
+
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            pe.Graphics.TextRenderingHint = TextRenderingHint;
+            base.OnPaint(pe);
+        }
     }
 }

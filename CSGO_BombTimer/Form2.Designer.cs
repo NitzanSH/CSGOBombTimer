@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.label1 = new System.Windows.Forms.Label();
+            this.timerlabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.numericTextBox1 = new CSGO_BombTimer.NumericTextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // timerlabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Created By Crapy :)";
+            this.timerlabel.AutoSize = true;
+            this.timerlabel.Location = new System.Drawing.Point(12, 113);
+            this.timerlabel.Name = "timerlabel";
+            this.timerlabel.Size = new System.Drawing.Size(98, 13);
+            this.timerlabel.TabIndex = 0;
+            this.timerlabel.Text = "Created By Crapy :)";
             // 
             // label2
             // 
@@ -94,8 +94,9 @@
             this.Controls.Add(this.numericTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.timerlabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "BombTimer By Crapy";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -106,7 +107,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label timerlabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private NumericTextBox numericTextBox1;
