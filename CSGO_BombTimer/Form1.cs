@@ -99,7 +99,7 @@ namespace CSGO_BombTimer
 
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            bombTimer = ((timestamp + BOMB_SECS) - calculateSeconds()) - 1;
+            bombTimer = (timestamp + BOMB_SECS) - calculateSeconds();
             if (bombTimer >= 0) {
             
               label1.Invoke((MethodInvoker)(() => label1.Text = bombTimer.ToString()));
