@@ -45,14 +45,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-
             // 
             // timerlabel
             // 
             this.timerlabel.AutoSize = true;
             this.timerlabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.timerlabel.ForeColor = System.Drawing.Color.White;
-            this.timerlabel.Location = new System.Drawing.Point(11, 11);
+            this.timerlabel.Location = new System.Drawing.Point(11, 10);
             this.timerlabel.Name = "timerlabel";
             this.timerlabel.Size = new System.Drawing.Size(13, 13);
             this.timerlabel.TabIndex = 2;

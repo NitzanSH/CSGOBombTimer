@@ -149,17 +149,6 @@ namespace CSGO_BombTimer
                 return cp;
             }
         }
-
-        private Bitmap getPictureBoxImage()
-        {
-            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                g.DrawImage(pictureBox1.Image,
-                    new Rectangle(0, 0, bmp.Width, bmp.Height));
-            }
-            return bmp;
-        }
     }
 
     public partial class CustomLabel : Label
