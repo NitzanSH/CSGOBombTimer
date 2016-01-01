@@ -1,6 +1,6 @@
 This is my first ever something made in C#. A simple Bomb Timer to be presented in the HUD
 
-EXE Download: http://www.mediafire.com/download/fd5716tqwweqfyt/CSGO_BombTimer.rar
+EXE Download: https://github.com/Crapy/CSGOBombTimer/blob/master/BombTimer2.0.rar
 
 CFG Download: http://www.mediafire.com/download/8bhgiq042xbh61f/gamestate_integration_bomb_timer.cfg
 
@@ -14,5 +14,3 @@ Instructions:
 Credits:
 
 https://github.com/rakijah/CSGSI - for the base of which I worked on.
-
-Tears - for helping me out in such confusing times.
